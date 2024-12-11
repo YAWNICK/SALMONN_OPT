@@ -42,7 +42,7 @@ def parse_args():
 
 
 def setup_seeds(config):
-    seed = config.seed + get_rank()
+    seed = config.seed # + get_rank()
 
     random.seed(seed)
     np.random.seed(seed)
@@ -63,7 +63,7 @@ def main():
     data_config = cfg.config.datasets
 
     # initialize distributed training
-    init_distributed_mode(run_config)
+    #init_distributed_mode(run_config)
     setup_seeds(run_config)
     setup_logger() # set after init_distributed_mode() to only log on master.
 

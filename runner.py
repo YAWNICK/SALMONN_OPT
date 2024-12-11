@@ -189,6 +189,7 @@ class Runner:
                 res["task"] = samples["task"]
 
             results.append(res)
+            print(f"P-|{res['id']}|{res['ground_truth']}|{res['text']}", flush=True)
 
         if is_dist_avail_and_initialized():
             dist.barrier()
